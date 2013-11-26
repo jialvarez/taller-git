@@ -1,0 +1,13 @@
+#!/bin/sh
+# Renombramos los espacios de los archivos a _
+find . -name '* *' | sort | while read FILE
+do
+NEWFILE=`echo ${FILE} | sed ’s/ /_/g;’`
+mv “${FILE}” ${NEWFILE}
+echo ${NEWFILE}
+done
+#convertimos bmp a jpg, es necesario el convert de Imagemagik
+for file in *.gif
+do
+convert $file `basename $file .gif`.jpg;
+done

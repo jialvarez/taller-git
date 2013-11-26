@@ -1,0 +1,10 @@
+*.aux
+*.bbl
+*.log
+*.nav
+*.backup
+*.toc
+*.snm
+*.dvi
+*.blg
+*.out

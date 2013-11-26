@@ -1,0 +1,49 @@
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+\usepackage{beamerthemeshadow}
+\usepackage{pgf}
+\usepackage{eurosym}
+\usepackage{array}% http://ctan.org/pkg/array
+\usepackage{fontspec}
+\usepackage{fontawesome}
+\newcolumntype{M}{>{\centering\arraybackslash}m{\dimexpr.25\linewidth-2\tabcolsep}}
+\usepackage{hyperref}
+\hypersetup{
+  breaklinks=true,
+  urlcolor=blue,
+}
+
+\usetheme{CambridgeUS}
+\usefonttheme{structurebold}
+
+\setbeamertemplate{itemize item}[triangle]
+
+\begin{document}
+
+
+\title{Sistemas de control de versiones distribuidos}
+\subtitle{Controla las versiones de tu trabajo con GIT}
+\author[Nacho Álvarez]{\texorpdfstring{Nacho Álvarez
+  \\ \faTwitter \hspace{5pt}@neonigmacdb
+  \\ \faEnvelope \hspace{5pt}neonigma@gmail.com}{Author}}
+
+\institute[WUL4]{\includegraphics[height=0.6cm]{imgs/wul4.png}}
+\date{\today}
+
+
+
+\frame{\centering \includegraphics[height=1cm]{imgs/training-thursday.png} \titlepage}
+
+\section[Índice]{}
+\frame{\tableofcontents}
+
+
+\input{introduccion}
+\input{definiciones}
+\input{whygit}
+\input{estructura}
+
+
+\input{enlaces}
+
+\end{document}

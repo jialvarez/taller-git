@@ -1,13 +1,25 @@
+\section{Más funcionalidades útiles}
+\frame
+{
+\frametitle{Más funcionalidades útiles}
+\begin{itemize}
+ \item \textbf{pull}\\ \indent
+Utilizándolo sin ningún parámetro adicional -\textbf{git pull origin master}- funciona igual que un \textit{update} en Subversion. Es decir, se trae los cambios y hace \textit{merge}. Si le pasamos el parámetro \textit{-{}-rebase}, funciona como un \textit{rebase}. Es decir, se trae los cambios hasta el último commit conocido antes de nuestros cambios locales y luego aplica estos cambios locales encima.
+ \item \textbf{gitignore}\\ \indent
+Este fichero se suele colocar en la raíz del proyecto y el contenido suele ser un listado de elementos que no queremos que sean reconocidos como ficheros del repositorio. 
+ \item update-index -{}-assume-unchanged
+ \item reset (soft + hard)
+\end{itemize}
+}
+
 \section{Algo más avanzado}
 \frame
 {
 \frametitle{Algo más avanzado}
 \begin{itemize}
- \item gitignore
- \item update-index --assume-unchanged
  \item squash
- \item cherry-pick
  \item format-patch
- \item reset (soft + hard)
+ \item cherry-pick
+ \item submodules
 \end{itemize}
 }

@@ -1,0 +1,17 @@
+\section{Tags}
+\frame
+{
+\frametitle{Tags}
+\begin{itemize}
+ \item En SVN, comúnmente se congela una versión copiando y pegando el \textit{trunk} a la carpeta \textit{tags} y subiendo esta nueva carpeta
+ \item En Git, un tag no es más que una etiqueta en un commit concreto
+ \item Con este simple acto, Git puede recuperar una versión en cualquier momento utilizando la etiqueta del tag
+ \item Dos tipos:
+ \begin{itemize}
+  \item \textbf{Lightweight tags:} git \textbf{tag} <etiqueta>
+  \item \textbf{Annotated tags:} git \textbf{tag} -a <etiqueta> -m <mensaje>
+ \end{itemize}
+ \item Para recuperar un tag, basta con hacer git \textbf{checkout} <tag>
+
+\end{itemize}
+}

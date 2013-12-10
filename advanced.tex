@@ -1,7 +1,7 @@
 \section{Más funcionalidades útiles}
 \frame
 {
-\frametitle{Más funcionalidades útiles}
+\frametitle{pull}
 \begin{itemize}
  \item \textbf{pull}\\ \indent
 Utilizándolo sin ningún parámetro adicional -\textbf{git pull origin master}- funciona igual que un \textit{update} en Subversion. Es decir, se trae los cambios y hace \textit{merge}. Si le pasamos el parámetro \textit{-{}-rebase}, funciona como un \textit{rebase}.
@@ -12,7 +12,7 @@ Utilizándolo sin ningún parámetro adicional -\textbf{git pull origin master}-
 
 \frame
 {
-\frametitle{Más funcionalidades útiles}
+\frametitle{ignore}
 \begin{itemize}
  \item \textbf{gitignore}\\ \indent
 Este fichero se suele colocar en la raíz del proyecto y el contenido suele ser un listado de elementos que no queremos que sean reconocidos como ficheros del repositorio. 
@@ -23,7 +23,7 @@ Este comando se utiliza para ficheros que accidentalmente se han \textit{comitea
 
 \frame
 {
-\frametitle{Más funcionalidades útiles}
+\frametitle{revert}
 \begin{itemize}
  \item \textbf{revert}\\ \indent
   Este comando deshace un único commit aplicando el parche con la diferencia como un nuevo commit. Ejemplo: git \textbf{revert} HEAD
@@ -38,7 +38,7 @@ Este comando se utiliza para ficheros que accidentalmente se han \textit{comitea
 
 \frame
 {
-\frametitle{Más funcionalidades útiles}
+\frametitle{soft reset}
 \begin{itemize}
  \item \textbf{soft reset}\\ \indent
  El comando git reset -{}-soft <hash> mueve el puntero de la cabeza al hash del commit que le indiquemos.\\
@@ -50,7 +50,7 @@ Este comando se utiliza para ficheros que accidentalmente se han \textit{comitea
 
 \frame
 {
-\frametitle{Más funcionalidades útiles}
+\frametitle{hard reset}
 \begin{itemize}
  \item \textbf{hard reset}\\ \indent
  El comando git reset -{}-hard <hash> mueve el puntero de la cabeza al hash del commit que le indiquemos y \textbf{destruye} toda la historia hasta dicho hash.\\
@@ -63,20 +63,31 @@ Este comando se utiliza para ficheros que accidentalmente se han \textit{comitea
 \section{Algo más avanzado}
 \frame
 {
-\frametitle{Algo más avanzado}
+\frametitle{stash}
 \begin{itemize}
  \item \textbf{stash}\\ \indent
-Se utiliza para \textit{aparcar} temporalmente los cambios actuales antes de ser comiteados. El comando se escribe únicamente git \textbf{stash}.
-\begin{framed}
-\$ git \textbf{stash} list\\
-stash@\{0\}: WIP on master: 049d078 added the index file\\
-stash@\{1\}: WIP on master: c264051... Revert added file\_size\\
-stash@\{2\}: WIP on master: 21d80a5... added number to log
-\end{framed}
+ Se utiliza para \textit{aparcar} temporalmente los cambios actuales antes de ser comiteados. El comando se escribe únicamente git \textbf{stash}.
+ \begin{framed}
+ \$ git \textbf{stash} list\\
+ stash@\{0\}: WIP on master: 049d078 added the index file\\
+ stash@\{1\}: WIP on master: c264051... Revert added file\_size\\
+ stash@\{2\}: WIP on master: 21d80a5... added number to log
+ \end{framed}
+ 
+ Recuperamos los cambios con el comando git \textbf{stash} apply <id>
+\end{itemize}
+}
 
-Recuperamos los cambios con el comando git \textbf{stash} apply <id>
+\section{Algo más avanzado}
+\frame
+{
+\frametitle{format-patch}
+\begin{itemize}
+ \item \textbf{format-patch}\\ \indent
+ Se utiliza para generar parches que se entregarán a mantenedores de repositorios que no aceptan \textit{pull requests}.\\
+ Un parche se genera con el comando git \textbf{format-patch} -{}-stdout \textit{<hash o rango de hashes>}. Esto genera tantos ficheros con parches como commits se hayan introducido como parámetro.\\
+ Para aplicar los parches, se utiliza el comando git \textbf{am} -{}-signoff < \textit{file.patch}
 
- \item format-patch
  \item squash
  \item cherry-pick
  \item reflog 

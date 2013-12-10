@@ -65,10 +65,20 @@ Este comando se utiliza para ficheros que accidentalmente se han \textit{comitea
 {
 \frametitle{Algo más avanzado}
 \begin{itemize}
- \item squash
+ \item \textbf{stash}\\ \indent
+Se utiliza para \textit{aparcar} temporalmente los cambios actuales antes de ser comiteados. El comando se escribe únicamente git \textbf{stash}.
+\begin{framed}
+\$ git \textbf{stash} list\\
+stash@\{0\}: WIP on master: 049d078 added the index file\\
+stash@\{1\}: WIP on master: c264051... Revert added file\_size\\
+stash@\{2\}: WIP on master: 21d80a5... added number to log
+\end{framed}
+
+Recuperamos los cambios con el comando git \textbf{stash} apply <id>
+
  \item format-patch
+ \item squash
  \item cherry-pick
- \item stash
  \item reflog 
  \item submodules
  \item lolcommits 

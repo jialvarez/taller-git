@@ -78,17 +78,47 @@ Este comando se utiliza para ficheros que accidentalmente se han \textit{comitea
 \end{itemize}
 }
 
-\section{Algo más avanzado}
 \frame
 {
 \frametitle{format-patch}
 \begin{itemize}
  \item \textbf{format-patch}\\ \indent
- Se utiliza para generar parches que se entregarán a mantenedores de repositorios que no aceptan \textit{pull requests}.\\
- Un parche se genera con el comando git \textbf{format-patch} -{}-stdout \textit{<hash o rango de hashes>}. Esto genera tantos ficheros con parches como commits se hayan introducido como parámetro.\\
+ Se utiliza para generar parches que se entregarán a mantenedores de repositorios que no aceptan \textit{pull requests}.\\ \vspace{0.2cm}
+ Un parche se genera con el comando git \textbf{format-patch} -{}-stdout \textit{<hash o rango de hashes>}. Esto genera tantos ficheros con parches como commits se hayan introducido como parámetro.\\ \vspace{0.2cm}
  Para aplicar los parches, se utiliza el comando git \textbf{am} -{}-signoff < \textit{file.patch}
+\end{itemize}
+}
 
- \item squash
+\frame
+{
+\frametitle{squash}
+\begin{itemize}
+ \item \textbf{squash}\\ \indent
+ Se utiliza dentro de lo que se llama el \textit{rebase interactivo}, para unir varios commits en uno solo antes de entregarlos al repositorio remoto. El proceso sería:
+ \begin{itemize}
+  \item Comiteamos tantas veces como queramos: git commit -m ``mensaje''
+  \item Si por ejemplo hemos hecho 2 commits, ejecutamos el rebase interactivo con: git \textbf{rebase} -i HEAD\textasciitilde2\\ \vspace{0.2cm}
+  \footnotesize
+   pick 4ca2acc commit file1\\
+   pick 7b36971 commit file2\\
+   
+   \# rebase 41a72e6..7b36971 onto 41a72e6\\
+   \#\\
+   \# commands:\\
+   \#  p, pick = use commit\\
+   \#  r, reword = use commit, but edit the commit message\\
+   \#  e, edit = use commit, but stop for amending\\
+   \#  s, squash = use commit, but meld into previous commit\\
+   \#  f, fixup = like ``squash'', but discard this commit's log message\\
+   \#  x, exec = run command (the rest of the line) using shell
+ \end{itemize}
+\end{itemize}
+}
+
+\frame
+{
+\frametitle{squash}
+\begin{itemize}
  \item cherry-pick
  \item reflog 
  \item submodules

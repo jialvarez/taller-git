@@ -9,7 +9,12 @@
 
 \frame
 {
-\frametitle{Punteros: HEAD, origin...}
+\frametitle{El puntero HEAD}
+\begin{itemize}
+ \item HEAD es una referencia simbólica que a menudo apunta al último commit de la rama actual
+ \item A veces el HEAD apunta directamente a un objeto commit, en este caso el estado se llama \textit{detached HEAD mode}. En este estado, incorporar un commit no reflejará cambios en rama alguna
+ \item El primer precedesor de HEAD puede direccionarse vía HEAD\textasciitilde1, HEAD\textasciitilde2 y así sucesivamente. Si cambias entre ramas, el puntero HEAD se mueve al último commit de la rama de trabajo. Si se hace un \textit{checkout} de un commit específico, el puntero HEAD apunta a este commit.
+\end{itemize}
 }
 
 \frame

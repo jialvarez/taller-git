@@ -15,11 +15,23 @@ Utilizándolo sin ningún parámetro adicional -\textbf{git pull origin master}-
 \includegraphics[height=5cm]{imgs/pull.png} 
 }
 
-\frame
-{
+\begin{frame}[fragile]
 \frametitle{ignore}
-Este fichero se suele colocar en la raíz del proyecto y el contenido suele ser un listado de elementos que no queremos que sean reconocidos como ficheros del repositorio. 
-}
+El fichero \textit{.gitignore} se suele colocar en la raíz del proyecto y el contenido suele ser un listado de elementos que no queremos que sean reconocidos como ficheros del repositorio.
+\footnotesize
+\begin{verbatim}
+neonigma@hyperion:~/things/taller-git$ cat .gitignore 
+*.aux
+*.bbl
+*.log
+*.backup
+*.toc
+*.dvi
+*.out
+neonigma@hyperion:~/things/taller-git$ git log principal.aux
+neonigma@hyperion:~/things/taller-git$ 
+\end{verbatim}
+\end{frame}
 
 \frame
 {

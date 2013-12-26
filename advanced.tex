@@ -33,11 +33,29 @@ neonigma@hyperion:~/things/taller-git$
 \end{verbatim}
 \end{frame}
 
-\frame
-{
+\begin{frame}[fragile]
 \frametitle{update-index}
-El comando update-index -{}-assume-unchanged se utiliza para ficheros que accidentalmente se han \textit{comiteado} (y probablemente \textit{pusheado}) y no queremos tener en cuenta los cambios producidos en estos ficheros, ya que lo veremos como modificados en la etapa II (listo para \textit{comitear}).
-}
+El comando \textbf{update-index} -{}-assume-unchanged se utiliza para ficheros que accidentalmente se han \textit{comiteado} (y probablemente \textit{pusheado}) y no queremos tener en cuenta los cambios producidos en estos ficheros, ya que lo veremos como modificados en la etapa II (listo para \textit{comitear}).
+\footnotesize
+\begin{verbatim}
+$ echo "Nueva linea\n" >> bibliografia.bib
+
+$ git status
+# En la rama master
+# Cambios no preparados para el commit:
+#   (use «git add <archivo>...» para actualizar lo que se ejecutará)
+#   (use «git checkout -- <archivo>...« para descartar cambios en le directorio de trabajo)
+#
+#	modificado:   bibliografia.bib
+#
+
+$ git update-index --assume-unchanged bibliografia.bib
+
+$ git status
+# En la rama master
+nothing to commit, working directory clean
+\end{verbatim}
+\end{frame}
 
 \frame
 {

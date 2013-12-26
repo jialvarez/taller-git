@@ -72,16 +72,18 @@ nothing to commit, working directory clean
 \frame
 {
 \frametitle{soft reset}
- El comando git reset -{}-soft <hash> mueve el puntero de la cabeza al hash del commit que le indiquemos.\\
+ El comando git \textbf{reset} -{}-soft <hash> mueve el puntero de la cabeza al hash del commit que le indiquemos.\\
  \begin{center}
     \includegraphics[height=4cm]{imgs/soft-reset.png}
  \end{center}
+ 
+ Esto provoca que los ficheros afectados entren de nueva en la etapa III (cambios listos para hacer commit).
 }
 
 \frame
 {
 \frametitle{hard reset}
- El comando git reset -{}-hard <hash> mueve el puntero de la cabeza al hash del commit que le indiquemos y \textbf{destruye} toda la historia hasta dicho hash.\\
+ El comando git \textbf{reset} -{}-hard <hash> mueve el puntero de la cabeza al hash del commit que le indiquemos y \textbf{destruye} toda la historia hasta dicho hash.\\
  \begin{center}
     \includegraphics[height=6cm]{imgs/reset-hard.png}
  \end{center}

@@ -1,4 +1,4 @@
 # taller-git
-Taller completo de Git
+Código en LaTeX del taller completo de Git
 
-Ver principal.pdf
+Ver principal.pdf para la presentación
